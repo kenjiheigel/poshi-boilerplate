@@ -19,7 +19,7 @@ This repository contains the minimal configuration to begin writing and running 
 ## Using Poshi
  1. Run using the command `./gradlew -P<propertyValue> <task>`
     for Example `./gradlew -P<propertyValue> runPoshi`
-    You can run `./gradlew help` to see the help message or `./gradlew tasks` to see available tasks (custom tasks should be under `Other tasks`)
+    You can run `./gradlew help` to see the help message or `./gradlew tasks` to see available tasks (tasks should be under `Poshi tasks`)
 
  3. To run standalone poshi in conjunction with this properties file, you can use the command
     `gradlew -PposhiRunnerExtPropertyFileNames=poshi-runner.properties <task>`

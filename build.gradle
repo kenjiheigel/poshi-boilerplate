@@ -30,6 +30,9 @@ dependencies {
 }
 
 checkPoshiRunnerExtPropertyFileNames {
+	description = 'Displays poshi runner ext property file names.'
+	group = 'Poshi'
+
 	if (!project.hasProperty("poshiRunnerExtPropertyFileNames")) {
 		println "No poshi runner ext property file names provided, defaulting to null"
 
@@ -42,6 +45,9 @@ checkPoshiRunnerExtPropertyFileNames {
 }
 
 executePQLQuery {
+	description = 'Execute PQL query.'
+	group = 'Poshi'
+
 	args('executePQLQuery')
 	classpath = configurations.poshiRunner
 	main = "com.liferay.poshi.runner.PoshiRunnerCommandExecutor"
@@ -50,6 +56,8 @@ executePQLQuery {
 }
 
 expandPoshiRunner {
+	group = 'Poshi'
+
 	dependsOn clean
 
 	File poshiRunnerJar = findPoshiRunnerJar()
@@ -63,6 +71,9 @@ expandPoshiRunner {
 }
 
 help {
+	description = 'Display general usage information.'
+	group = 'Poshi'
+
 	println "Format to execute poshi tasks: "
 	println "./gradlew <task> -D\"<property=value>\""
 	println ""
@@ -77,6 +88,9 @@ help {
 }
 
 runPoshi {
+	description = 'Executes a Poshi test.'
+	group = 'Poshi'
+
 	dependsOn expandPoshiRunner
 
 	testLogging.showStandardStreams = true
@@ -89,6 +103,9 @@ runPoshi {
 }
 
 validatePoshi {
+	description = 'Validates the Poshi file syntax.'
+	group = 'Poshi'
+
 	args('validatePoshi')
 	classpath = configurations.poshiRunner
 	main = "com.liferay.poshi.runner.PoshiRunnerCommandExecutor"
@@ -97,6 +114,9 @@ validatePoshi {
 }
 
 writePoshiProperties {
+	description = 'Generates properties using meta data from Poshi files in the project.'
+	group = 'Poshi'
+
 	args('writePoshiProperties')
 	classpath = configurations.poshiRunner
 	main = "com.liferay.poshi.runner.PoshiRunnerCommandExecutor"
