@@ -17,11 +17,11 @@ This repository contains the minimal configuration to begin writing and running 
 ** You can also see the list of properties here: https://github.com/liferay/liferay-portal/blob/master/modules/test/poshi/poshi-properties.markdown
 
 ## Using Poshi
- 1. Run using the command `./gradlew -b build.gradle -P<propertyValue> <task>`
-    for Example `./gradlew -b build.gradle -P<propertyValue> runPoshi`
-    You can run `./gradlew -b build.gradle help` to see the help message or `./gradlew -b build.gradle tasks` to see available tasks (custom tasks should be under `Other tasks`)
+ 1. Run using the command `./gradlew -P<propertyValue> <task>`
+    for Example `./gradlew -P<propertyValue> runPoshi`
+    You can run `./gradlew help` to see the help message or `./gradlew tasks` to see available tasks (custom tasks should be under `Other tasks`)
 
  3. To run standalone poshi in conjunction with this properties file, you can use the command
-    `gradlew -b build.gradle -PposhiRunnerExtPropertyFileNames=poshi-runner.properties <task>`
+    `gradlew -PposhiRunnerExtPropertyFileNames=poshi-runner.properties <task>`
 
 ** Currently there are no function files readily available for use with standalone poshi.
