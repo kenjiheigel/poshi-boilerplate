@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-	poshiRunner group: "com.liferay", name: "com.liferay.poshi.runner", version: "1.0.243"
+	poshiRunner group: "com.liferay", name: "com.liferay.poshi.runner", version: "${poshiRunnerVersion}"
 
    // OPTIONAL the following adds a poshi-resource jar into the classpath during execution
    // To execute any testcase or macro from this jar, use 'Portal' as the namespace, (i.e Portal.PortalSmoke#Smoke)
