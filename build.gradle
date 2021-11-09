@@ -1,5 +1,7 @@
 apply plugin: "java"
 
+defaultTasks 'help'
+
 task checkPoshiRunnerExtPropertyFileNames
 task executePQLQuery (type: JavaExec)
 task expandPoshiRunner (type: Copy)
