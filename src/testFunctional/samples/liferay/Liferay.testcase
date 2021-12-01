@@ -1,11 +1,11 @@
 definition {
 	setUp {
-		Default.Open(locator1 = "http://www.google.com");
+		Default.Open(locator1 = "http://www.liferay.com");
 	}
 
 	@priority = "5"
-	test MyTestCase {
-		Default.Open(locator1 = "http://www.google.com");
+	test Smoke {
+		Default.Open(locator1 = "http://www.liferay.com");
 	}
 
 }
