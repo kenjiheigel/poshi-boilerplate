@@ -1,0 +1,11 @@
+definition {
+	setUp {
+		Default.Open(locator1 = "http://www.google.com");
+	}
+
+	@priority = "5"
+	test MyTestCase {
+		Default.Open(locator1 = "http://www.google.com");
+	}
+
+}
