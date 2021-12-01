@@ -1,3 +1,5 @@
+import org.gradle.internal.os.OperatingSystem
+
 apply plugin: "java"
 
 defaultTasks 'help'
@@ -9,6 +11,24 @@ task help
 task runPoshi(type: Test)
 task validatePoshi (type: JavaExec)
 task writePoshiProperties (type: JavaExec)
+
+OperatingSystem operatingSystem = OperatingSystem.current()
+
+if (operatingSystem.linux) {
+	ext.chromeDriverExecutable = "chromedriver"
+	ext.executableDirName = "webdriver/linux/"
+}
+else if (operatingSystem.macOsX) {
+	ext.chromeDriverExecutable = "chromedriver"
+	ext.executableDirName = "webdriver/mac/"
+}
+else if (operatingSystem.windows) {
+	ext.chromeDriverExecutable = "chromedriver.exe"
+	ext.executableDirName = "webdriver/windows/"
+}
+else {
+	throw new IllegalStateException("Unsupported operating system")
+}
 
 configurations {
 	poshiRunner
@@ -158,6 +178,9 @@ def getPoshiRunnerExtProperties(poshiRunnerExtPropertyFileNames) {
 	}
 
 	poshiRunnerExtProperties.putAll(System.getProperties())
+
+	poshiRunnerExtProperties.put("selenium.chrome.driver.executable", "${ext.chromeDriverExecutable}")
+	poshiRunnerExtProperties.put("selenium.executable.dir.name", "${ext.executableDirName}")
 
 	return poshiRunnerExtProperties
 }
